@@ -1,10 +1,18 @@
-const sampleData = [
+type Promotion = {
+  id: number,
+  name: string,
+  tag: string,
+  image: string,
+  discount: string
+}
+
+const sampleData: Promotion[] = [
   {
     id: 1,
     name: 'JVS Truckers',
     tag: '@jamievanslooten',
     discount: '15% OFF',
-    image: '/Rectangle-39.png',
+    image: '/Rectangle-40.png',
   },  
   {
     id: 2,
@@ -60,29 +68,35 @@ const sampleData = [
     name: 'JVS Truckers',
     tag: '@jamievanslooten',
     discount: '15% OFF',
-    image: '/Rectangle-39.png',
+    image: '/Rectangle-40.png',
   },  
   {
     id: 10,
     name: 'JVS Truckers',
     tag: '@jamievanslooten',
     discount: '15% OFF',
-    image: '/Rectangle-39.png',
+    image: '/Rectangle-40.png',
   },  
   {
     id: 11,
     name: 'JVS Truckers',
     tag: '@jamievanslooten',
     discount: '15% OFF',
-    image: '/Rectangle-39.png',
+    image: '/Rectangle-40.png',
   },  
   {
     id: 12,
     name: 'JVS Truckers',
     tag: '@jamievanslooten',
     discount: '15% OFF',
-    image: '/Rectangle-39.png',
+    image: '/Rectangle-40.png',
   }
 ];
 
-export default sampleData;
+export function getPromotions(): Promotion[] {
+  return sampleData
+}
+
+export function getPromotion(id: number): Promotion | undefined {
+  return sampleData.find((promotion) => promotion.id === id)
+}

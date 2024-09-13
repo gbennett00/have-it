@@ -1,5 +1,5 @@
 import React from 'react';
-import sampleData from './lib/sampleData';
+import { getPromotions } from './lib/promotions';
 
 // Navigation Header component
 const Header: React.FC = () => {
@@ -49,7 +49,7 @@ const ExplorePage: React.FC = () => {
       <main className="flex-1 p-8 bg-gray">
         <h1 className="text-3xl text-white font-bold text-left mb-8 pl-16">Streaming accessory promo codes</h1>
         <div className="flex flex-wrap justify-around px-12">
-          {sampleData.map((card) => (
+          {getPromotions().map((card) => (
             <Card key={card.id} name={card.name} tag={card.tag} discount={card.discount} image={card.image}/>
           ))}
         </div>
